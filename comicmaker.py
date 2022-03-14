@@ -17,7 +17,8 @@ def main():
     out = Path(args.output)
 
     # Clear output dir
-    shutil.rmtree(out)
+    if out.exists():
+        shutil.rmtree(out)
 
     # build the image folder
     (out / "images").mkdir(parents=True, exist_ok=True)
