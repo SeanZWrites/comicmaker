@@ -4,41 +4,41 @@ This is a simple static site generator (SSG) to build a webcomic website, with a
 input as possible. All you need is an ordered set of images, and you're good to
 go!
 
-## Installing Python and Setting Up Jinja
+## Installing Python (Windows Users Only)
 
-*Note: Windows users will likely need to install python (it's preinstalled on
-Macs and in most Linux installations - you can download releases from
-[python.org](https://www.python.org/downloads/). If unsure which version to use
-Python 3.8 is a good choice. Also, when installing, be sure to check to check
-the box 'Add Python to PATH' in the installer.*
+Windows users will likely need to install python (it's preinstalled on
+Macs and in most Linux installations). You can download releases from
+[python.org](https://www.python.org/downloads/). 
 
-Once python is installed, you'll need to install the templating library used by
-this tool (jinja). Thankfully, python can do this for us.
+If unsure which version to use, Python 3.8 is a good choice. Also, when
+installing, be sure to check to check the box 'Add Python to PATH' in the
+installer.
 
-Open a Terminal (or Powershell for Windows) in the folder where you downloaded this tool.
+## Running The Tool (Simplified)
+Copy your image files into the `comic_pages` folder.
 
-*Note: If you're new to using a command line, you might want to grab
+Then you can use the helper script to build the site for you. Windows users can
+double click on the `RUNME_Windows.bat` file (once python is installed).
+
+Mac users also have a helper script, but they may need to right click on it, and
+hit 'Open With', and then select 'Terminal'.
+
+When you run the helper script (on either Mac or Windows), it will automatically
+setup the required tools to work, prompt you to add your image files to the
+right folder, build the site, and start a preview web server!
+
+*That said, if you're new to using a command line, you might want to grab
 [Visual Studio Code](https://code.visualstudio.com/). It's a great editor (which
-will help when you want to customize things later), and it has a built in
+will help when you want to customize the templates later), and it has a built in
 terminal. If you decide to go that route, open the folder containing this tool
 with VS Code, and then hit `Terminal > New Terminal`. It will open one in the
 correct place.*
 
-Once you have a terminal open, we need to setup a python environment.
-  * First we need to setup our virtual environment in the folder `./venv`:
-    * Mac/Linux: `python3 -m venv ./venv`
-    * Windows: `python -m venv ./venv`
-  * We then need to activate it: 
-    * Mac/Linux: `. ./venv/bin/activate` (note the leading dot + space)
-    * Windows: `./venv/Scripts/activate`
-  * Finally we can install the necessary libraries `pip install -r requirements.txt`
+## Running The Tool (Advanced)
 
-We're now ready. Note that in the future we don't need to run `pip` or create a
-new venv, but you will need to re-activate the environment whenever you create a
-new terminal Window (by running either `. ./venv/bin/activate` for Mac/Linux
-users, or `./venv/Scripts/activate` for Windows users).
-
-## Basic Usage
+*Note: If you're less familiar with python, or the command line, you should
+use the helper script, as it does the setup for you. If you'd like to 
+use your own venv/tweak settings/use your own test server, read on!*
 
 To use, copy your comic images into `comic_pages`, and update `settings.py`
 so the title and description are correct. 
