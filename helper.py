@@ -30,7 +30,7 @@ def run_server(outdir="dest"):
 
     print("Starting preview website on http://localhost:8000")
     print("Note this website will be slower than a real one.")
-    print("Press Ctrl+C to exit.")
+    print("Close the window to exit (or press Ctrl+C)")
 
     Handler = http.server.SimpleHTTPRequestHandler
 
@@ -44,7 +44,6 @@ def run_server(outdir="dest"):
             httpd.serve_forever()
     except KeyboardInterrupt:
         print("Server stopped.")
-        httpd.shutdown()
     
 
 def run_comic_maker():
