@@ -33,7 +33,12 @@ def run_server(outdir="dest"):
     print("Press Ctrl+C to exit.")
 
     Handler = http.server.SimpleHTTPRequestHandler
-    httpd = socketserver.TCPServer(("", 8000), Handler)
+
+    class ReuseAddrServer(socketserver.TCPServer):
+        allow_reuse_address = True
+    
+
+    httpd = ReuseAddrServer(("", 8000), Handler)
     try:
         with httpd:
             httpd.serve_forever()
